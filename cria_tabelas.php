@@ -9,6 +9,9 @@ $abre=mysqli_query ($conexao, "USE $dbnome");
 $tbNome1="tbl_usuario"; 
 $tbNome2 = "tbl_produto"; 
 $tbNome3 = "tbl_categoria"; 
+mysqli_query($conexao, "DROP TABLE IF EXISTS $tbNome1");
+mysqli_query($conexao, "DROP TABLE IF EXISTS $tbNome2");
+mysqli_query($conexao, "DROP TABLE IF EXISTS $tbNome3");
 $elimina = "DROP TABLE IF EXISTS $tbNome2";
 $criacao1 = "CREATE TABLE if not exists $tbNome1 (" .
     "usu_id smallint NOT NULL AUTO_INCREMENT," .
@@ -89,7 +92,7 @@ if ($resIndx3 > 0) {
     echo "Indice da Tabela $tbNome3 não pode ser criado.<br>";
 } 
 $insere1 = "INSERT INTO $tbNome1 VALUES (1, 'Fulano de Tal', 'fulano', '123')";
-$insere2 = ("INSERT INTO $tbNome1 VALUES(2, 'Ciclano de Tal','ciclano', 'abc')"); 
+$insere2 = ("INSERT INTO $tbNome1 VALUES(2, 'Ciclano de Tal','ciclano2', 'abc')"); 
 $insere3 = "INSERT INTO $tbNome3 (cat_nome) VALUES ('Eletrodomésticos')";
 $insere4 = "INSERT INTO $tbNome3 (cat_nome) VALUES ('Cama, Mesa e Banho')";
 $insere5 = "INSERT INTO $tbNome3 (cat_nome) VALUES ('Áudio e Video')";
